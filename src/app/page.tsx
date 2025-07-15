@@ -12,7 +12,11 @@ import {
   Github,
   Download,
   ChevronRight,
-  ChevronDown
+  ChevronDown,
+  Code,
+  Database,
+  Cloud,
+  BarChart3
 } from 'lucide-react';
 
 export default function Home() {
@@ -62,10 +66,10 @@ export default function Home() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
+    <div className="min-h-screen bg-black">
       {/* Navigation */}
       <nav className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50">
-        <div className="bg-white dark:bg-gray-800 rounded-full p-2 shadow-lg">
+        <div className="bg-black/80 backdrop-blur-sm border border-gray-800 rounded-full p-2 shadow-2xl">
           <div className="flex flex-col gap-2">
             {navItems.map((item) => {
               const Icon = item.icon;
@@ -77,8 +81,8 @@ export default function Home() {
                   onClick={() => scrollToSection(item.id)}
                   className={`p-3 rounded-full transition-all duration-300 ${
                     activeSection === item.id
-                      ? 'bg-blue-600 text-white shadow-lg'
-                      : 'text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      ? 'bg-white text-black shadow-lg'
+                      : 'text-gray-400 hover:text-white hover:bg-white/10'
                   }`}
                   title={item.label}
                 >
@@ -142,10 +146,10 @@ export default function Home() {
                         priority
                       />
                     </motion.div>
-                    <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white">
                       Nikhil Karthikeyan
                     </h1>
-                    <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+                    <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
                       Hey, I'm Nikhil Karthikeyan! I am a UC Davis student interested in the world of data engineering, software development, and product management. I have internship and project experience in these fields.
                     </p>
                   </div>
@@ -155,7 +159,7 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 1, duration: 0.5 }}
                     onClick={() => scrollToSection('experience')}
-                    className="group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-lg hover:scale-105 transition-all duration-300 flex items-center gap-2 mx-auto"
+                    className="group bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 hover:scale-105 transition-all duration-300 flex items-center gap-2 mx-auto"
                   >
                     Explore My Work
                     <ChevronDown className="group-hover:translate-y-1 transition-transform" />
@@ -163,33 +167,67 @@ export default function Home() {
                 </motion.div>
               </section>
 
-              {/* Experience Section */}
+              {/* Technical Skills Section */}
               <section id="experience" className="min-h-screen flex items-center px-6 py-12">
                 <motion.div
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5 }}
                   viewport={{ once: true }}
-                  className="w-full max-w-6xl mx-auto space-y-8"
+                  className="w-full max-w-6xl mx-auto space-y-12"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Technical Experience</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-white">Technical Skills</h2>
                   
-                  <div className="grid md:grid-cols-2 gap-6">
+                  {/* Programming Languages */}
+                  <div className="text-center">
+                    <h3 className="text-2xl font-semibold mb-6 text-gray-300">Programming Languages</h3>
+                    <div className="flex flex-wrap justify-center gap-8">
+                      {[
+                        { name: 'Python' },
+                        { name: 'SQL' },
+                        { name: 'R' },
+                        { name: 'TypeScript' },
+                        { name: 'JavaScript' }
+                      ].map((lang, index) => (
+                        <motion.div
+                          key={lang.name}
+                          initial={{ opacity: 0, y: 20 }}
+                          whileInView={{ opacity: 1, y: 0 }}
+                          transition={{ delay: index * 0.1 }}
+                          viewport={{ once: true }}
+                          className="flex flex-col items-center gap-2"
+                        >
+                          <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg hover:scale-110 hover:bg-white/20 transition-all duration-300">
+                            {lang.name.charAt(0)}
+                          </div>
+                          <span className="text-sm font-medium text-gray-300">{lang.name}</span>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Technology Categories */}
+                  <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-blue-600">Data Engineering Intern</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Kaiser Permanente</p>
-                      <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• ETL Pipeline Development</li>
-                        <li>• Data Warehousing & Analytics</li>
-                        <li>• Big Data Processing (Spark, Hadoop)</li>
-                        <li>• Database Design & Optimization</li>
-                      </ul>
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                          <Code className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3 text-white">Frontend Development</h3>
+                        <ul className="space-y-2 text-gray-300 text-sm">
+                          <li>• React & Next.js</li>
+                          <li>• HTML/CSS/JavaScript</li>
+                          <li>• TypeScript</li>
+                          <li>• Tailwind CSS</li>
+                          <li>• Responsive Design</li>
+                        </ul>
+                      </div>
                     </motion.div>
 
                     <motion.div
@@ -197,16 +235,21 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-purple-600">Developer Intern</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">San Diego Supercomputer Center</p>
-                      <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• High-Performance Computing</li>
-                        <li>• Scientific Software Development</li>
-                        <li>• Parallel Processing & Optimization</li>
-                        <li>• Research Collaboration</li>
-                      </ul>
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                          <Database className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3 text-white">Backend Development</h3>
+                        <ul className="space-y-2 text-gray-300 text-sm">
+                          <li>• Node.js & Express</li>
+                          <li>• Python (Django/Flask)</li>
+                          <li>• RESTful APIs</li>
+                          <li>• Database Design</li>
+                          <li>• Authentication</li>
+                        </ul>
+                      </div>
                     </motion.div>
 
                     <motion.div
@@ -214,16 +257,21 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-green-600">Undergraduate Research Assistant</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">UC Davis Health Informatics</p>
-                      <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• Healthcare Data Analysis</li>
-                        <li>• Clinical Informatics Research</li>
-                        <li>• Statistical Analysis & Modeling</li>
-                        <li>• Academic Publication Support</li>
-                      </ul>
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                          <Cloud className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3 text-white">Cloud & DevOps</h3>
+                        <ul className="space-y-2 text-gray-300 text-sm">
+                          <li>• AWS & GCP</li>
+                          <li>• Docker & Kubernetes</li>
+                          <li>• CI/CD Pipelines</li>
+                          <li>• Git & GitHub</li>
+                          <li>• Serverless Architecture</li>
+                        </ul>
+                      </div>
                     </motion.div>
 
                     <motion.div
@@ -231,16 +279,21 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.8 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-orange-600">AI/ML Intern</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Aggie Sports Analytics</p>
-                      <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• Machine Learning Model Development</li>
-                        <li>• Sports Data Analytics</li>
-                        <li>• Predictive Modeling</li>
-                        <li>• Performance Optimization</li>
-                      </ul>
+                      <div className="text-center">
+                        <div className="w-16 h-16 bg-white/10 border border-white/20 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                          <BarChart3 className="w-8 h-8 text-white" />
+                        </div>
+                        <h3 className="text-xl font-semibold mb-3 text-white">Data Analysis & Engineering</h3>
+                        <ul className="space-y-2 text-gray-300 text-sm">
+                          <li>• Apache Spark & Kafka</li>
+                          <li>• Pandas & NumPy</li>
+                          <li>• Machine Learning</li>
+                          <li>• Data Visualization</li>
+                          <li>• ETL Pipelines</li>
+                        </ul>
+                      </div>
                     </motion.div>
                   </div>
                 </motion.div>
@@ -255,7 +308,7 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="w-full max-w-6xl mx-auto space-y-8"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Projects</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-white">Projects</h2>
                   
                   <div className="grid md:grid-cols-2 gap-6">
                     <motion.div
@@ -263,16 +316,16 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-blue-600">Data Pipeline Project</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      <h3 className="text-xl font-semibold mb-3 text-white">Data Pipeline Project</h3>
+                      <p className="text-gray-300 mb-4">
                         Built an end-to-end ETL pipeline processing millions of records daily using Apache Spark and Kafka.
                       </p>
                       <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">Python</span>
-                        <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Spark</span>
-                        <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">Kafka</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Python</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Spark</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Kafka</span>
                       </div>
                     </motion.div>
 
@@ -281,16 +334,16 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-purple-600">Product Analytics Dashboard</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      <h3 className="text-xl font-semibold mb-3 text-white">Product Analytics Dashboard</h3>
+                      <p className="text-gray-300 mb-4">
                         Developed a real-time analytics dashboard for product metrics using React and D3.js.
                       </p>
                       <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">React</span>
-                        <span className="px-3 py-1 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200 rounded-full text-sm">D3.js</span>
-                        <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Node.js</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">React</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">D3.js</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Node.js</span>
                       </div>
                     </motion.div>
 
@@ -299,16 +352,16 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.6 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-green-600">Machine Learning Model</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      <h3 className="text-xl font-semibold mb-3 text-white">Machine Learning Model</h3>
+                      <p className="text-gray-300 mb-4">
                         Implemented a predictive model for customer churn analysis using scikit-learn and TensorFlow.
                       </p>
                       <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-orange-100 dark:bg-orange-900 text-orange-800 dark:text-orange-200 rounded-full text-sm">Python</span>
-                        <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">TensorFlow</span>
-                        <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Scikit-learn</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Python</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">TensorFlow</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Scikit-learn</span>
                       </div>
                     </motion.div>
 
@@ -317,16 +370,16 @@ export default function Home() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.8 }}
                       viewport={{ once: true }}
-                      className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-orange-600">Cloud Infrastructure</h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                      <h3 className="text-xl font-semibold mb-3 text-white">Cloud Infrastructure</h3>
+                      <p className="text-gray-300 mb-4">
                         Deployed scalable microservices architecture on AWS using Docker and Kubernetes.
                       </p>
                       <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded-full text-sm">AWS</span>
-                        <span className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 rounded-full text-sm">Docker</span>
-                        <span className="px-3 py-1 bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 rounded-full text-sm">K8s</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">AWS</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Docker</span>
+                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">K8s</span>
                       </div>
                     </motion.div>
                   </div>
@@ -342,7 +395,7 @@ export default function Home() {
                       href="https://github.com/nkarthik23"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-gray-900 dark:bg-white text-white dark:text-gray-900 px-6 py-3 rounded-full font-semibold hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors"
+                      className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                     >
                       <Github size={20} />
                       View All Projects on GitHub
@@ -360,56 +413,56 @@ export default function Home() {
                   viewport={{ once: true }}
                   className="w-full max-w-6xl mx-auto space-y-8"
                 >
-                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">Resume</h2>
+                  <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-white">Resume</h2>
                   
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white dark:bg-gray-800 p-8 rounded-xl shadow-lg max-w-4xl mx-auto"
+                    className="bg-white/5 border border-white/10 p-8 rounded-xl shadow-2xl max-w-4xl mx-auto backdrop-blur-sm"
                   >
                     <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold mb-2">Nikhil Karthikeyan</h3>
-                      <p className="text-gray-600 dark:text-gray-300">UC Davis Student</p>
-                      <p className="text-gray-600 dark:text-gray-300">Data Engineering & Product Management</p>
+                      <h3 className="text-2xl font-bold mb-2 text-white">Nikhil Karthikeyan</h3>
+                      <p className="text-gray-300">UC Davis Student</p>
+                      <p className="text-gray-300">Data Engineering & Product Management</p>
                     </div>
 
                     <div className="space-y-6">
                       <div>
-                        <h4 className="text-xl font-semibold mb-3 text-blue-600">Education</h4>
-                        <div className="border-l-4 border-blue-500 pl-4">
-                          <p className="font-semibold">University of California, Davis</p>
-                          <p className="text-gray-600 dark:text-gray-300">Bachelor's Degree in Data Science</p>
-                          <p className="text-gray-600 dark:text-gray-300">Expected Graduation: 2027</p>
+                        <h4 className="text-xl font-semibold mb-3 text-white">Education</h4>
+                        <div className="border-l-4 border-white/30 pl-4">
+                          <p className="font-semibold text-white">University of California, Davis</p>
+                          <p className="text-gray-300">Bachelor's Degree in Data Science</p>
+                          <p className="text-gray-300">Expected Graduation: 2027</p>
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="text-xl font-semibold mb-3 text-purple-600">Skills</h4>
+                        <h4 className="text-xl font-semibold mb-3 text-white">Skills</h4>
                         <div className="grid md:grid-cols-2 gap-4">
                           <div>
-                            <p className="font-semibold mb-2">Programming Languages:</p>
-                            <p className="text-gray-600 dark:text-gray-300">Python, Java, JavaScript, SQL, R</p>
+                            <p className="font-semibold mb-2 text-white">Programming Languages:</p>
+                            <p className="text-gray-300">Python, Java, JavaScript, SQL, R</p>
                           </div>
                           <div>
-                            <p className="font-semibold mb-2">Technologies:</p>
-                            <p className="text-gray-600 dark:text-gray-300">Next.js,Apache Spark, Kafka, Docker, AWS</p>
+                            <p className="font-semibold mb-2 text-white">Technologies:</p>
+                            <p className="text-gray-300">Next.js, Apache Spark, Kafka, Docker, AWS</p>
                           </div>
                           <div>
-                            <p className="font-semibold mb-2">Tools:</p>
-                            <p className="text-gray-600 dark:text-gray-300">Git, Tableau, Power BI, Jira</p>
+                            <p className="font-semibold mb-2 text-white">Tools:</p>
+                            <p className="text-gray-300">Git, Tableau, Power BI, Jira</p>
                           </div>
                           <div>
-                            <p className="font-semibold mb-2">Methodologies:</p>
-                            <p className="text-gray-600 dark:text-gray-300">Agile, Scrum, Data Modeling</p>
+                            <p className="font-semibold mb-2 text-white">Methodologies:</p>
+                            <p className="text-gray-300">Agile, Scrum, Data Modeling</p>
                           </div>
                         </div>
                       </div>
 
                       <div>
-                        <h4 className="text-xl font-semibold mb-3 text-green-600">Interests</h4>
-                        <p className="text-gray-600 dark:text-gray-300">
+                        <h4 className="text-xl font-semibold mb-3 text-white">Interests</h4>
+                        <p className="text-gray-300">
                           Passionate about leveraging data to drive business decisions and create impactful products. 
                           Interested in the intersection of technology and business strategy.
                         </p>
@@ -423,7 +476,7 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="text-center pt-8"
                     >
-                      <button className="inline-flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+                      <button className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
                         <Download size={20} />
                         Download Resume (PDF)
                       </button>
