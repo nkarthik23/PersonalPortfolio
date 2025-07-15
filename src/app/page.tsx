@@ -182,7 +182,8 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-blue-600">Data Engineering</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-blue-600">Data Engineering Intern</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Kaiser Permanente</p>
                       <ul className="space-y-2 text-gray-600 dark:text-gray-300">
                         <li>• ETL Pipeline Development</li>
                         <li>• Data Warehousing & Analytics</li>
@@ -198,12 +199,13 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-purple-600">Product Management</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-purple-600">Developer Intern</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">San Diego Supercomputer Center</p>
                       <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• Product Strategy & Roadmapping</li>
-                        <li>• User Research & Analytics</li>
-                        <li>• Agile Development & Scrum</li>
-                        <li>• Cross-functional Team Leadership</li>
+                        <li>• High-Performance Computing</li>
+                        <li>• Scientific Software Development</li>
+                        <li>• Parallel Processing & Optimization</li>
+                        <li>• Research Collaboration</li>
                       </ul>
                     </motion.div>
 
@@ -214,12 +216,13 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-green-600">Programming</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-green-600">Undergraduate Research Assistant</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">UC Davis Health Informatics</p>
                       <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• Python, Java, JavaScript</li>
-                        <li>• SQL & NoSQL Databases</li>
-                        <li>• Cloud Platforms (AWS, GCP)</li>
-                        <li>• Machine Learning & AI</li>
+                        <li>• Healthcare Data Analysis</li>
+                        <li>• Clinical Informatics Research</li>
+                        <li>• Statistical Analysis & Modeling</li>
+                        <li>• Academic Publication Support</li>
                       </ul>
                     </motion.div>
 
@@ -230,12 +233,13 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-orange-600">Tools & Technologies</h3>
+                      <h3 className="text-xl font-semibold mb-3 text-orange-600">AI/ML Intern</h3>
+                      <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">Aggie Sports Analytics</p>
                       <ul className="space-y-2 text-gray-600 dark:text-gray-300">
-                        <li>• Apache Spark, Kafka</li>
-                        <li>• Docker, Kubernetes</li>
-                        <li>• Git, CI/CD Pipelines</li>
-                        <li>• Tableau, Power BI</li>
+                        <li>• Machine Learning Model Development</li>
+                        <li>• Sports Data Analytics</li>
+                        <li>• Predictive Modeling</li>
+                        <li>• Performance Optimization</li>
                       </ul>
                     </motion.div>
                   </div>
