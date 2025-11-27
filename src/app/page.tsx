@@ -169,20 +169,20 @@ export default function Home() {
                       transition={{ delay: 0.5, type: "spring", stiffness: 200 }}
                       className="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg"
                     >
-                      <Image
-                        src="/headshot.jpg"
+        <Image
+                        src="/newheadshot.jpeg"
                         alt="Nikhil Karthikeyan"
                         width={128}
                         height={128}
                         className="w-full h-full object-cover"
-                        priority
-                      />
+          priority
+        />
                     </motion.div>
                     <h1 className="text-4xl md:text-6xl font-bold text-white">
                       Nikhil Karthikeyan
                     </h1>
                     <p className="text-xl md:text-2xl text-gray-300 max-w-2xl mx-auto">
-                      Hey, I'm Nikhil Karthikeyan! I am a UC Davis student interested in the world of data engineering, software development, and product management. I have internship and project experience in these fields.
+                      Hey, I'm Nikhil Karthikeyan! I am a UC Davis student interested in the world of data engineering, software development, and AI/ML. I have internship and project experience in these fields.
                     </p>
                   </div>
                   
@@ -346,6 +346,7 @@ export default function Home() {
                   <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-white">Projects</h2>
                   
                   <div className="grid md:grid-cols-2 gap-6">
+                    {/* CryptoWatch */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
@@ -353,71 +354,79 @@ export default function Home() {
                       viewport={{ once: true }}
                       className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-white">Data Pipeline Project</h3>
-                      <p className="text-gray-300 mb-4">
-                        Built an end-to-end ETL pipeline processing millions of records daily using Apache Spark and Kafka.
-                      </p>
-                      <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Python</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Spark</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Kafka</span>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <h3 className="text-xl font-semibold text-white">CryptoWatch</h3>
+                        <span className="text-xs text-gray-400">June 2025</span>
                       </div>
+                      <p className="text-sm text-gray-400 mb-3">
+                        Python · PySpark · Azure · Power BI · Databricks
+                      </p>
+                      <ul className="space-y-2 text-gray-300 text-sm mb-4">
+                        <li>
+                          • Built a cryptocurrency price tracker using the CoinGecko API, storing real-time and historical data in Azure Blob
+                          Storage and Delta Lake on Databricks.
+          </li>
+                        <li>
+                          • Processed data with PySpark and visualized trends and anomalies using Streamlit, enabling insights into rolling
+                          averages and price volatility.
+          </li>
+                      </ul>
                     </motion.div>
 
+                    {/* Volare */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.4 }}
+                      transition={{ delay: 0.35 }}
                       viewport={{ once: true }}
                       className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-white">Product Analytics Dashboard</h3>
-                      <p className="text-gray-300 mb-4">
-                        Developed a real-time analytics dashboard for product metrics using React and D3.js.
-                      </p>
-                      <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">React</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">D3.js</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Node.js</span>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <h3 className="text-xl font-semibold text-white">Volare</h3>
+                        <span className="text-xs text-gray-400">May 2025</span>
                       </div>
+                      <p className="text-sm text-gray-400 mb-3">
+                        Python · Next.js · Scikit-learn · Groq
+                      </p>
+                      <ul className="space-y-2 text-gray-300 text-sm mb-4">
+                        <li>
+                          • Developed a full-stack AI-powered interview preparation platform using Next.js, FastAPI, and PostgreSQL, featuring
+                          real-time mock interview simulations and personalized feedback using LLMs.
+                        </li>
+                        <li>
+                          • Integrated HumeAI’s emotional intelligence API with Groq’s high-throughput LLM inference to analyze user sentiment
+                          and tailor question difficulty, improving recommendation precision.
+                        </li>
+                      </ul>
                     </motion.div>
 
+                    {/* PitchPerfect */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6 }}
+                      transition={{ delay: 0.5 }}
                       viewport={{ once: true }}
-                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
+                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm md:col-span-2"
                     >
-                      <h3 className="text-xl font-semibold mb-3 text-white">Machine Learning Model</h3>
-                      <p className="text-gray-300 mb-4">
-                        Implemented a predictive model for customer churn analysis using scikit-learn and TensorFlow.
-                      </p>
-                      <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Python</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">TensorFlow</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Scikit-learn</span>
+                      <div className="flex items-center justify-between gap-2 mb-2">
+                        <h3 className="text-xl font-semibold text-white">PitchPerfect</h3>
+                        <span className="text-xs text-gray-400">February 2025</span>
                       </div>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.8 }}
-                      viewport={{ once: true }}
-                      className="bg-white/5 border border-white/10 p-6 rounded-xl shadow-2xl hover:shadow-white/5 transition-all duration-300 hover:scale-105 backdrop-blur-sm"
-                    >
-                      <h3 className="text-xl font-semibold mb-3 text-white">Cloud Infrastructure</h3>
-                      <p className="text-gray-300 mb-4">
-                        Deployed scalable microservices architecture on AWS using Docker and Kubernetes.
+                      <p className="text-sm text-gray-400 mb-3">
+                        Python · Pandas · NumPy · Scikit-learn
                       </p>
-                      <div className="flex gap-2">
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">AWS</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">Docker</span>
-                        <span className="px-3 py-1 bg-white/10 border border-white/20 text-white rounded-full text-sm">K8s</span>
-                      </div>
+                      <ul className="space-y-2 text-gray-300 text-sm mb-4">
+                        <li>
+                          • Processed 1TB+ baseball game files using Pandas and NumPy, achieving 85% prediction accuracy with Scikit-learn
+                          models.
+                        </li>
+                        <li>
+                          • Optimized models (AdaBoost, XGBoost, RandomForest, Logistic Regression), reducing error by 15% and improving
+                          reliability.
+                        </li>
+                      </ul>
                     </motion.div>
-                  </div>
+        </div>
 
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -428,8 +437,8 @@ export default function Home() {
                   >
                     <a
                       href="https://github.com/nkarthik23"
-                      target="_blank"
-                      rel="noopener noreferrer"
+          target="_blank"
+          rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
                     >
                       <Github size={20} />
@@ -455,66 +464,47 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                     viewport={{ once: true }}
-                    className="bg-white/5 border border-white/10 p-8 rounded-xl shadow-2xl max-w-4xl mx-auto backdrop-blur-sm"
+                    className="max-w-4xl mx-auto space-y-6"
                   >
-                    <div className="text-center mb-8">
-                      <h3 className="text-2xl font-bold mb-2 text-white">Nikhil Karthikeyan</h3>
-                      <p className="text-gray-300">UC Davis Student</p>
-                      <p className="text-gray-300">Data Engineering & Product Management</p>
-                    </div>
-
-                    <div className="space-y-6">
-                      <div>
-                        <h4 className="text-xl font-semibold mb-3 text-white">Education</h4>
-                        <div className="border-l-4 border-white/30 pl-4">
-                          <p className="font-semibold text-white">University of California, Davis</p>
-                          <p className="text-gray-300">Bachelor's Degree in Data Science</p>
-                          <p className="text-gray-300">Expected Graduation: 2027</p>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xl font-semibold mb-3 text-white">Skills</h4>
-                        <div className="grid md:grid-cols-2 gap-4">
-                          <div>
-                            <p className="font-semibold mb-2 text-white">Programming Languages:</p>
-                            <p className="text-gray-300">Python, Java, JavaScript, SQL, R</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold mb-2 text-white">Technologies:</p>
-                            <p className="text-gray-300">Next.js, Apache Spark, Kafka, Docker, AWS</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold mb-2 text-white">Tools:</p>
-                            <p className="text-gray-300">Git, Tableau, Power BI, Jira</p>
-                          </div>
-                          <div>
-                            <p className="font-semibold mb-2 text-white">Methodologies:</p>
-                            <p className="text-gray-300">Agile, Scrum, Data Modeling</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <h4 className="text-xl font-semibold mb-3 text-white">Interests</h4>
-                        <p className="text-gray-300">
-                          Passionate about leveraging data to drive business decisions and create impactful products. 
-                          Interested in the intersection of technology and business strategy.
+                    {/* Embedded PDF preview */}
+                    <div className="bg-white/5 border border-white/10 rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm">
+                      <object
+                        data="/NIkhil_Resume_SK%20(30).pdf"
+                        type="application/pdf"
+                        className="w-full h-[70vh]"
+                      >
+                        <p className="p-4 text-gray-300">
+                          Your browser can&apos;t display PDFs.{" "}
+                          <a
+                            href="/NIkhil_Resume_SK%20(30).pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-white"
+                          >
+                            Open the resume in a new tab
+                          </a>
+                          .
                         </p>
-                      </div>
+                      </object>
                     </div>
 
+                    {/* Download button */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.4 }}
                       viewport={{ once: true }}
-                      className="text-center pt-8"
+                      className="text-center pt-2"
                     >
-                      <button className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                      <a
+                        href="/NIkhil_Resume_SK%20(30).pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors"
+                      >
                         <Download size={20} />
-                        Download Resume (PDF)
-                      </button>
+                        View / Download Resume (PDF)
+                      </a>
                     </motion.div>
                   </motion.div>
                 </motion.div>
